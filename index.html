@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Boy Marketplace — Gojo & Geto</title>
+  <meta name="description" content="One‑page landing for adopting your favorite anime boys — Satoru Gojo & Suguru Geto. Features, benefits, testimonials and quick purchase form." />
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">AnimeBoy<span>Market</span></a>
+      <nav class="nav">
+        <a href="#products">Characters</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#details">Details</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact" class="btn btn-primary">Buy now</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" id="hamburger">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO / LEAD / CTA with carousel -->
+  <section id="hero" class="section hero">
+    <div class="container">
+      <div class="lead">
+        <h1>Adopt your <span class="accent">ultimate anime boy</span></h1>
+        <p class="subtitle">Limited companion experience featuring <strong>Satoru Gojo</strong> and <strong>Suguru Geto</strong>. Modern, measurable and fun.</p>
+      </div>
+
+      <div class="carousel" aria-roledescription="carousel">
+        <div class="carousel-track" id="carousel-track">
+          <!-- Slide 1: Add your hero image below -->
+          <div class="slide">
+            <img src="assets/img/hero-1.jpg" alt="Hero — Satoru Gojo pose" />
+            <div class="slide-caption">
+              <h3>Satoru Gojo — The Limitless Choice</h3>
+              <p>Charm, power and style. Fix him & adopt.</p>
+              <a href="#contact" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
+            </div>
+          </div>
+
+          <!-- Slide 2: Add your hero image below -->
+          <div class="slide">
+            <img src="assets/img/hero-2.jpg" alt="Hero — Suguru Geto pose" />
+            <div class="slide-caption">
+              <h3>Suguru Geto — The Charismatic Rebel</h3>
+              <p>Magnetic presence with a murder spree. Run & adopt.</p>
+              <a href="#contact" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
+            </div>
+          </div>
+
+          <!-- Slide 3: Add your hero image below -->
+          <div class="slide">
+            <img src="assets/img/hero-3.png" alt="Hero — Gojo & Geto duo" />
+            <div class="slide-caption">
+              <h3>Pick your destiny</h3>
+              <p>Two legends. One decision.</p>
+              <a href="#products" class="btn">Compare</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">›</button>
+        <div class="dots" id="dots" aria-label="Slide indicators"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS / TILES -->
+  <section id="products" class="section products">
+    <div class="container">
+      <h2>Choose your character</h2>
+      <div class="grid two">
+        <!-- Card: Gojo -->
+        <article class="card">
+          <!-- Replace image placeholder -->
+          <img src="assets/img/gojo.jpg" alt="Satoru Gojo portrait" class="card-img"/>
+          <div class="card-body">
+            <h3>Satoru Gojo</h3>
+            <p>Effortlessly cool, infinity-tier protection, premium emotional baggage.</p>
+            <div class="card-actions">
+              <a href="#details" class="link">Details</a>
+              <div class="spacer"></div>
+              <button class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Geto -->
+        <article class="card">
+          <!-- Replace image placeholder -->
+          <img src="assets/img/geto.jpg" alt="Suguru Geto portrait" class="card-img"/>
+          <div class="card-body">
+            <h3>Suguru Geto</h3>
+            <p>Magnetic charisma, elite cultist tactics, slay-queen-villain aesthetics.</p>
+            <div class="card-actions">
+              <a href="#details" class="link">Details</a>
+              <div class="spacer"></div>
+              <button class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy now</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS / VIDEO -->
+  <section id="benefits" class="section benefits">
+    <div class="container">
+      <h2>Why fans love this experience</h2>
+      <div class="grid two">
+        <div class="video-wrap">
+          <!-- Replace VIDEO_ID with your YouTube id, keep path as-is -->
+          <iframe class="yt" width="560" height="315"
+            src="https://www.youtube.com/embed/2noL4iAqwrc?si=q3BYkYizYgcGgdLw"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+        <ul class="feature-list">
+          <li>Why bother with the real men? Buy and personalize your dream.</li>
+          <li>Is he complaining? Turn on his chill mode and enjoy your peace.</li>
+          <li>Worried about delivery? They come wrapped in bubble wrap.</li>
+          <li>Want to buy fast? First 1000 customers get the premium summer clothes pack for free.</li>
+          <li>Buying two boys at the same time heavily discouraged - they may kill each other.</li>
+        </ul>
+      </div>
+      <div class="cta-center">
+        <a href="#contact" class="btn btn-primary btn-buy" data-product="General">Get started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS SECTION (anchor for 'Details' links) -->
+  <section id="details" class="section details">
+    <div class="container">
+      <h2>Details</h2>
+      <div class="grid two">
+        <div>
+          <h3>Satoru Gojo</h3>
+          <ul>
+            <li>Signature move: Limitless</li>
+            <li>Vibe: Chaotic good mentor</li>
+            <li>Pros: Rich, handsome, and funny</li>
+            <li>Cons: Narcissistic, prone to becoming a twix, cat-coded dog person</li>
+            <li>Condition on delivery: Comes in two pieces, sewn together by my own tears</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
+        </div>
+        <div>
+          <h3>Suguru Geto</h3>
+          <ul>
+            <li>Signature move: Cursed Spirit Manipulation</li>
+            <li>Vibe: Charismatic strategist</li>
+            <li>Pros: Rich, suave, and goal-driven</li>
+            <li>Cons: Cult leader with dreams of mass genocide of normal people</li>
+            <li>Condition on delivery: Comes in one piece, brain may fall out if shaken</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <h2>What fans say</h2>
+      <div class="grid three">
+        <blockquote class="quote">
+          <p>“Gojo held me in his arms after I read the last chapter of manga in Shibuya Station. People stared while I sobbed.”</p>
+          <footer>— Wiktoria, Cracow</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Geto may be a cultist, but he has the best queen aura.”</p>
+          <footer>— Weronika, Breda</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Geto stole my girlfriend. Had to turn gay and adopt Gojo for myself. Beggars can't be choosers.”</p>
+          <footer>— Claudiu, Cluj</footer>
+        </blockquote>
+    </div>
+  </section>
+
+  <!-- CONTACT / FORM -->
+  <section id="contact" class="section contact">
+    <div class="container narrow">
+      <h2>Quick purchase form</h2>
+      <p class="muted">Fill in the form and we’ll reach out. Submissions are stored locally for demo/measurement.</p>
+
+      <form id="purchaseForm" novalidate>
+        <div class="form-row">
+          <label for="fullName">Full name*</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g., Jane Doe" required />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone*</label>
+          <input type="tel" id="phone" name="phone" placeholder="+48 600 000 000" required />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us who you want to adopt and any preferences…" rows="4"></textarea>
+        </div>
+
+        <input type="hidden" id="chosenProduct" name="chosenProduct" value="General" />
+
+        <div class="form-row checkbox">
+          <input type="checkbox" id="consent" required />
+          <label for="consent">
+            I consent to processing my personal data for the purpose of handling this inquiry.
+          </label>
+        </div>
+
+        <div class="form-row checkbox">
+          <input type="checkbox" id="marketing" />
+          <label for="marketing">
+            I agree to receive occasional marketing messages (optional).
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+
+      <div class="legal">
+        <p><strong>Data Controller:</strong> AnimeBoy Market Sp. z o.o., Kraków, Poland (demo).</p>
+        <p>
+          <strong>Information clauses:</strong> Your data is processed solely to answer your inquiry and present an offer.
+          Legal basis: Art. 6(1)(b) and (f) GDPR. Data is stored no longer than necessary to handle your request. You have the right to access, rectify,
+          erase, restrict processing, object, and data portability. Contact: <a href="mailto:admin@example.com">admin@example.com</a>.
+          This page is a demo; no real purchase occurs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AnimeBoy Market — Demo LP</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
