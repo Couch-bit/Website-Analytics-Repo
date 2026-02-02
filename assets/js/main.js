@@ -100,7 +100,7 @@ form?.addEventListener('submit', (e) => {
   saveLocal(storageKey, payload);
   console.log('Submission saved locally under', storageKey, payload);
   form.reset();
-  alert('Thanks! Your demo request has been saved locally.');
+  alert('Thanks! Your request has been saved.');
 });
 
 // Smooth scroll for anchor links (including Buy buttons navigating to form)
