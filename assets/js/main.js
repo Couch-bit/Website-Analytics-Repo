@@ -121,10 +121,15 @@ document.getElementById('btn-accept').addEventListener('click', function() {
     document.getElementById('cookie-banner').style.display = 'none';
     
     // Send the signal to GTM
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'consent_granted'
-    });
+    const consent = {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+    };
+    gtag('consent', 'update', consent);
+    localStorage.setItem('consentMode', JSON.stringify(consent));
+    document.getElementById('cookie-banner').style.display = 'none';
 });
 document.getElementById('btn-deny').addEventListener('click', function() {
     // Hide the Banner
