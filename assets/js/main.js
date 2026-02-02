@@ -114,3 +114,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Handle GDPR Banner
+document.getElementById('btn-accept').addEventListener('click', function() {
+    // Hide the Banner
+    document.getElementById('cookie-banner').style.display = 'none';
+    
+    // Send the signal to GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'consent_granted'
+    });
+});
+document.getElementById('btn-deny').addEventListener('click', function() {
+    // Hide the Banner
+    document.getElementById('cookie-banner').style.display = 'none';
+});

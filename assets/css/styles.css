@@ -129,3 +129,16 @@ input:focus, textarea:focus{border-color:var(--accent)}
 /* --------- Footer --------- */
 .site-footer{border-top:1px solid #202545;padding:18px 0;background:#0f1222}
 .footer-inner{display:flex;align-items:center;justify-content:space-between}
+
+/* --------- GDPR --------- */
+#cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #171b34; color: white; padding: 20px; text-align: center;
+    display: flex; justify-content: center; gap: 20px; align-items: center;
+}
+#btn-accept {
+    padding: 10px 20px; cursor: pointer; background: green; color: white; border: none;
+}
+#btn-deny {
+    padding: 10px 20px; cursor: pointer; background: gray; color: black; border: none;
+}
