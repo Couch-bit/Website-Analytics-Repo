@@ -135,3 +135,14 @@ document.getElementById('btn-deny').addEventListener('click', function() {
     // Hide the Banner
     document.getElementById('cookie-banner').style.display = 'none';
 });
+
+// Handle click events
+document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-track]');
+    if (target) {
+        const eventName = target.getAttribute('data-info');
+        const product = target.getAttribute('data-info');
+        
+        trackEvent(eventName, product);
+    }
+});

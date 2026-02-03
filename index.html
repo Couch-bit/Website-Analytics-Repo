@@ -28,7 +28,16 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-593ZJ3VM');</script>
-  <!-- End Google Tag Manager -->
+  <!-- General Click Event Function-->
+  <script>
+    function trackEvent(eventName, product) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': eventName,
+        'product': product
+    });
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anime Boy Marketplace — Gojo & Geto</title>
@@ -68,7 +77,7 @@
             <div class="slide-caption">
               <h3>Satoru Gojo — The Limitless Choice</h3>
               <p>Charm, power and style. Fix him & adopt.</p>
-              <a href="#contact" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
+              <a href="#contact" data-track="click" data-info="click_carousel" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
             </div>
           </div>
 
@@ -78,7 +87,7 @@
             <div class="slide-caption">
               <h3>Suguru Geto — The Charismatic Rebel</h3>
               <p>Magnetic presence with a murder spree. Run & adopt.</p>
-              <a href="#contact" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
+              <a href="#contact" data-track="click" data-info="click_carousel" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
             </div>
           </div>
 
@@ -112,9 +121,9 @@
             <h3>Satoru Gojo</h3>
             <p>Effortlessly cool, infinity-tier protection, premium emotional baggage.</p>
             <div class="card-actions">
-              <a href="#details" class="link">Details</a>
+              <a href="#details" data-track="click" data-info="click_details" class="link" data-product="Satoru Gojo">Details</a>
               <div class="spacer"></div>
-              <a href="#contact" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
+              <a href="#contact" data-track="click" data-info="click_products" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
             </div>
           </div>
         </article>
@@ -127,9 +136,9 @@
             <h3>Suguru Geto</h3>
             <p>Magnetic charisma, elite cultist tactics, slay-queen-villain aesthetics.</p>
             <div class="card-actions">
-              <a href="#details" class="link">Details</a>
+              <a href="#details" data-track="click" data-info="click_details" class="link" data-product="Suguru Geto">Details</a>
               <div class="spacer"></div>
-              <a href="#contact" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
+              <a href="#contact" data-track="click" data-info="click_products" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
             </div>
           </div>
         </article>
@@ -160,7 +169,7 @@
         </ul>
       </div>
       <div class="cta-center">
-        <a href="#contact" class="btn btn-primary btn-buy" data-product="General">Get started</a>
+        <a href="#contact" data-track="click" data-info="click_benefits" class="btn btn-primary btn-buy" data-product="General">Get started</a>
       </div>
     </div>
   </section>
@@ -179,7 +188,7 @@
             <li>Cons: Narcissistic, prone to becoming a twix, cat-coded dog person</li>
             <li>Condition on delivery: Comes in two pieces, sewn together by my own tears</li>
           </ul>
-          <a href="#contact" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
+          <a href="#contact" data-track="click" data-info="click_details" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
         </div>
         <div>
           <h3>Suguru Geto</h3>
@@ -190,7 +199,7 @@
             <li>Cons: Cult leader with dreams of mass genocide of normal people</li>
             <li>Condition on delivery: Comes in one piece, brain may fall out if shaken</li>
           </ul>
-          <a href="#contact" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
+          <a href="#contact" data-track="click" data-info="click_details" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
         </div>
       </div>
     </div>
