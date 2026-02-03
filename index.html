@@ -18,7 +18,7 @@
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
       'analytics_storage': 'denied',
-      'wait_for_update': 500
+      'wait_for_update': 500 // force waiting for safety
     });
   }
   </script>
@@ -28,16 +28,6 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-593ZJ3VM');</script>
-  <!-- General Click Event Function-->
-  <script>
-    function trackEvent(eventName, product) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': eventName,
-        'product': product
-    });
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anime Boy Marketplace — Gojo & Geto</title>
@@ -55,7 +45,7 @@
         <a href="#benefits">Benefits</a>
         <a href="#details">Details</a>
         <a href="#testimonials">Reviews</a>
-        <a href="#contact" class="btn btn-primary">Buy now</a>
+        <a href="#contact" data-track="click" data-info="click_nav" class="btn btn-primary" data-product="General">Buy now</a>
       </nav>
       <button class="hamburger" aria-label="Open menu" id="hamburger">☰</button>
     </div>
@@ -71,7 +61,7 @@
 
       <div class="carousel" aria-roledescription="carousel">
         <div class="carousel-track" id="carousel-track">
-          <!-- Slide 1: Add your hero image below -->
+          <!-- Gojo -->
           <div class="slide">
             <img src="assets/img/hero-1.jpg" alt="Hero — Satoru Gojo pose" />
             <div class="slide-caption">
@@ -81,7 +71,7 @@
             </div>
           </div>
 
-          <!-- Slide 2: Add your hero image below -->
+          <!-- Geto -->
           <div class="slide">
             <img src="assets/img/hero-2.jpg" alt="Hero — Suguru Geto pose" />
             <div class="slide-caption">
@@ -91,7 +81,7 @@
             </div>
           </div>
 
-          <!-- Slide 3: Add your hero image below -->
+          <!-- Duo -->
           <div class="slide">
             <img src="assets/img/hero-3.png" alt="Hero — Gojo & Geto duo" />
             <div class="slide-caption">
@@ -115,13 +105,12 @@
       <div class="grid two">
         <!-- Card: Gojo -->
         <article class="card">
-          <!-- Replace image placeholder -->
           <img src="assets/img/gojo.jpg" alt="Satoru Gojo portrait" class="card-img"/>
           <div class="card-body">
             <h3>Satoru Gojo</h3>
             <p>Effortlessly cool, infinity-tier protection, premium emotional baggage.</p>
             <div class="card-actions">
-              <a href="#details" data-track="click" data-info="click_details" class="link" data-product="Satoru Gojo">Details</a>
+              <a href="#details" data-track="click" data-info="click_show_details" class="link" data-product="Satoru Gojo">Details</a>
               <div class="spacer"></div>
               <a href="#contact" data-track="click" data-info="click_products" class="btn btn-primary btn-buy" data-product="Satoru Gojo">Buy Gojo</a>
             </div>
@@ -130,13 +119,12 @@
 
         <!-- Card: Geto -->
         <article class="card">
-          <!-- Replace image placeholder -->
           <img src="assets/img/geto.jpg" alt="Suguru Geto portrait" class="card-img"/>
           <div class="card-body">
             <h3>Suguru Geto</h3>
             <p>Magnetic charisma, elite cultist tactics, slay-queen-villain aesthetics.</p>
             <div class="card-actions">
-              <a href="#details" data-track="click" data-info="click_details" class="link" data-product="Suguru Geto">Details</a>
+              <a href="#details" data-track="click" data-info="click_show_details" class="link" data-product="Suguru Geto">Details</a>
               <div class="spacer"></div>
               <a href="#contact" data-track="click" data-info="click_products" class="btn btn-primary btn-buy" data-product="Suguru Geto">Buy Geto</a>
             </div>
@@ -284,12 +272,12 @@
     </div>
   </footer>
 
-  <!-- Banner RODO -->
-    <div id="cookie-banner">
-        <span>This site uses cookies. Do you consent to losing your privacy?</span>
-        <button id="btn-accept">HELL YEAH!!!</button>
-        <button id="btn-deny">HELL NOOOO!!!</button>
-    </div>
+  <!-- GDPR -->
+  <div id="cookie-banner">
+      <span>This site uses cookies. Do you consent to losing your privacy?</span>
+      <button id="btn-accept">HELL YEAH!!!</button>
+      <button id="btn-deny">HELL NOOOO!!!</button>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>

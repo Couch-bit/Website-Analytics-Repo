@@ -3,16 +3,6 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.querySelector('.nav');
 hamburger?.addEventListener('click', () => nav.classList.toggle('open'));
 
-// Smooth scroll for all .btn-buy to #contact and record selected product
-const buyButtons = document.querySelectorAll('.btn-buy');
-const chosenProductInput = document.getElementById('chosenProduct');
-buyButtons.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const product = btn.getAttribute('data-product') || 'General';
-    if (chosenProductInput) chosenProductInput.value = product;
-  });
-});
-
 // Simple carousel
 const track = document.getElementById('carousel-track');
 const prevBtn = document.getElementById('prevBtn');
@@ -49,31 +39,13 @@ setInterval(() => updateCarousel(index + 1), 6000);
 // Year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Measurement helpers
-const storageKey = 'animeBoyLP:submissions';
-const clickKey = 'animeBoyLP:clicks';
-
-function saveLocal(key, data) {
-  const arr = JSON.parse(localStorage.getItem(key) || '[]');
-  arr.push(data);
-  localStorage.setItem(key, JSON.stringify(arr));
-}
-
-// Track CTA clicks
-document.querySelectorAll('a.btn, button.btn').forEach(el => {
-  el.addEventListener('click', () => {
-    saveLocal(clickKey, {
-      ts: new Date().toISOString(),
-      path: location.pathname,
-      text: (el.textContent || '').trim(),
-      product: el.getAttribute('data-product') || null,
-      section: el.closest('section')?.id || 'header'
-    });
-  });
-});
-
 // Form logic
 const form = document.getElementById('purchaseForm');
+form?.addEventListener('input', (e) => {
+  window.dataLayer.push({
+    'event': 'form_start'
+  })
+});
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
   const fullName = document.getElementById('fullName');
@@ -82,24 +54,20 @@ form?.addEventListener('submit', (e) => {
 
   if (!fullName.value.trim() || !phone.value.trim() || !consent.checked) {
     alert('Please fill the required fields and accept the data processing clause.');
+    window.dataLayer.push({
+      'event': 'form_error'
+    })
     return;
   }
 
-  const payload = {
-    ts: new Date().toISOString(),
-    product: document.getElementById('chosenProduct')?.value || 'General',
-    fullName: fullName.value.trim(),
-    phone: phone.value.trim(),
-    message: document.getElementById('message')?.value.trim() || '',
-    utm_source: new URLSearchParams(location.search).get('utm_source'),
-    utm_campaign: new URLSearchParams(location.search).get('utm_campaign'),
-    path: location.pathname,
-    userAgent: navigator.userAgent
-  };
-
-  saveLocal(storageKey, payload);
-  console.log('Submission saved locally under', storageKey, payload);
-  form.reset();
+  // Disable the form if a lead was generated
+  const elements = form?.elements;
+  for (let i = 0; i < elements.length; i++) {
+      elements[i].disabled = true;
+  }
+  window.dataLayer.push({
+      'event': 'generate_lead'
+    })
   alert('Thanks! Your request has been saved.');
 });
 
@@ -137,11 +105,16 @@ document.getElementById('btn-deny').addEventListener('click', function() {
 });
 
 // Handle click events
+function trackEvent(eventName, product) {
+    window.dataLayer.push({
+        'event': eventName,
+        'product': product
+})};
 document.addEventListener('click', (e) => {
     const target = e.target.closest('[data-track]');
     if (target) {
         const eventName = target.getAttribute('data-info');
-        const product = target.getAttribute('data-info');
+        const product = target.getAttribute('data-product');
         
         trackEvent(eventName, product);
     }
