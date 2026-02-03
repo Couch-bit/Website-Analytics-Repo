@@ -6,9 +6,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 
-  if (localStorage.getItem('consentMode')) {
-    gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
-  } else {
+  try {
+    if (localStorage.getItem('consentMode')) {
+      gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+    } else {
+      throw new Error('No saved consent');
+    }
+  } catch (e) {
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
