@@ -83,6 +83,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// Disable the GDPR Banner if consent is present
+if (!ask_consent) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
 // Handle GDPR Banner
 document.getElementById('btn-accept').addEventListener('click', function() {
     // Hide the Banner
