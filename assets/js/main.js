@@ -72,10 +72,8 @@ form?.addEventListener('submit', (e) => {
   }
 
   // Push the generate_lead event
-  const group = localStorage.getItem('consentMode') || 'Control'
   window.dataLayer.push({
-      'event': 'generate_lead',
-      'group': group
+      'event': 'generate_lead'
     })
   alert('Thanks! Your request has been saved.');
 });
