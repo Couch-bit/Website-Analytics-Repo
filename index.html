@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   
-  let ask_consent = false;
+  let askConsent = false;
   try {
     if (localStorage.getItem('consentMode')) {
       gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
@@ -21,7 +21,7 @@
       'analytics_storage': 'denied',
       'wait_for_update': 500 // force waiting for safety
     });
-    ask_consent = true;
+    askConsent = true;
   }
   </script>
   <!-- Google Tag Manager -->

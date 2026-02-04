@@ -41,11 +41,16 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Form logic
 const form = document.getElementById('purchaseForm');
+let formStarted = false;
 form?.addEventListener('input', (e) => {
-  window.dataLayer.push({
-    'event': 'form_start'
-  })
+  if (!formStarted) {
+    window.dataLayer.push({
+      'event': 'form_start'
+    })
+    formStarted = true
+  }
 });
+
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
   const fullName = document.getElementById('fullName');
@@ -53,10 +58,10 @@ form?.addEventListener('submit', (e) => {
   const consent = document.getElementById('consent');
 
   if (!fullName.value.trim() || !phone.value.trim() || !consent.checked) {
-    alert('Please fill the required fields and accept the data processing clause.');
     window.dataLayer.push({
       'event': 'form_error'
     })
+    alert('Please fill the required fields and accept the data processing clause.');
     return;
   }
 
@@ -88,7 +93,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // Disable the GDPR Banner if consent is present
-if (!ask_consent) {
+if (!askConsent) {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 
