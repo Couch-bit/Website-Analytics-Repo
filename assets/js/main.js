@@ -65,8 +65,12 @@ form?.addEventListener('submit', (e) => {
   for (let i = 0; i < elements.length; i++) {
       elements[i].disabled = true;
   }
+
+  // Push the generate_lead event
+  const group = localStorage.getItem('consentMode') || 'Control'
   window.dataLayer.push({
-      'event': 'generate_lead'
+      'event': 'generate_lead',
+      'group': group
     })
   alert('Thanks! Your request has been saved.');
 });
